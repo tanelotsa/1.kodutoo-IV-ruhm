@@ -1,8 +1,8 @@
 <?php
 	
-	var_dump($_GET);
-	echo "<br>";
-	var_dump($_POST);
+	//var_dump($_GET);
+	//echo "<br>";
+	//var_dump($_POST);
 	
 	$signupEmailError = "*";
 	
@@ -31,17 +31,14 @@
 			
 			$signupPasswordError = "Väli on kohustuslik!";
 			
-	} else { 
+		} else { 
 		
 			if (strlen($_POST["signupPassword"]) < 8 ) {
 				
 				$signupPasswordError = "* Parool peab olema vähemalt kaheksa märki!";
-			}
+				}
 		
-			}
-		
-			
-	
+			}	
 		
 	}
 	
@@ -55,6 +52,19 @@
 			
 			//on tühi
 			$birthdateError = "Sisesta sünnikuupäev!";
+		
+		}
+	
+	}
+	
+	$genderError = "*";
+	
+	if (isset ($_POST["gender"])) {
+		
+		
+		if(empty($_POST["gender"])) {
+			
+			$genderError = "Sisesta sugu !";
 		
 		}
 	
@@ -126,7 +136,7 @@
 		
 		<br>
 		
-		<input name="gender" type = "radio" value ="Mees" >	Mees	<//?php echo $signupPasswordError; ?>
+		<input name="gender" type = "radio" value ="Mees" >	Mees	<?php echo $genderError; ?>
 		<br>
 		<input name="gender" type = "radio" value ="Naine" > Naine
 		
