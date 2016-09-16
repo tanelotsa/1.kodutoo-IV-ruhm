@@ -29,7 +29,7 @@
 		
 		if(empty($_POST["signupPassword"])) {
 			
-			$signupPasswordError = "Väli on kohustuslik";
+			$signupPasswordError = "Väli on kohustuslik!";
 			
 	} else { 
 		
