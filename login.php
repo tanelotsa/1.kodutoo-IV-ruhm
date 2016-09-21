@@ -4,6 +4,39 @@
 	//echo "<br>";
 	//var_dump($_POST);
 	
+	$loginEmailError = "*";
+	
+	if (isset ($_POST["loginEmail"])) {
+		
+		
+		if(empty($_POST["loginEmail"])) {
+			
+			$loginEmailError = "Sisesta E-Post !";
+		
+		}
+	
+	}
+	
+	
+	$loginPasswordError = "*";
+	
+	if (isset ($_POST["loginPassword"])) {
+		
+		
+		if(empty($_POST["loginPassword"])) {
+			
+			$loginPasswordError = "Sisesta Parool !";
+		
+		}
+	
+	}
+	
+	
+	
+	
+	
+	
+	
 	$signupEmailError = "*";
 	
 	//kas keegi vajutas nuppu 
@@ -85,7 +118,7 @@
 		
 		<br>
 		
-		<input name="loginEmail" type = "email" >
+		<input name="loginEmail" type = "email" > <?php echo $loginEmailError ; ?>
 		
 		<br><br>
 		
@@ -93,7 +126,7 @@
 		
 		<br>
 		
-		<input name="loginPassword" type = "password" >
+		<input name="loginPassword" type = "password" > <?php echo $loginPasswordError ; ?>
 	
 		<br><br>
 		
@@ -109,7 +142,7 @@
 		
 		<br>
 		
-		<input name="signupEmail" type = "email" > <?php echo $signupEmailError; ?>
+		<input name="signupEmail" type = "email" > <?php echo $signupEmailError ; ?>
 		
 		<br><br>
 		
@@ -156,3 +189,21 @@
 	
 	</body>
 </html>
+
+<?php
+
+//mvp - lehekülg, kus saab kirja panna kõik sarjad, mida vaatad ja kaugel omadega oled.
+	//endal pidevalt probleem sellega, et mingi sari jääb pooleli kuskilt hooaja keskelt ning siis kunagi hiljem läheb kõvasti aega, et jälle õige koht üles leida
+	//vaadatud sarju saaks ka hinnata 
+	//sisestades soo ja vanuse saaks ka soovitada sarnase taustaga kasutajatele sinupoolt kõrgelt hinnatud sarju jne.
+	//
+	//
+	//
+	//
+
+
+
+
+?>
+
+	 
